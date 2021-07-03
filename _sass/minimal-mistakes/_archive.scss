@@ -465,3 +465,25 @@
 a {
   text-decoration: none;
 }
+
+/* 포스트 목록의 글자 크기와 간격*/
+.post_list {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+}
+
+.category_tag {
+  margin-right: 5px;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  text-decoration: none;
+  border: 1px solid #697379;
+  border-radius: 4px;
+  background-color: #6d767c;
+  font-family: "Coming Soon",Georgia,Times,serif;
+  color: #FFBF00;
+}
+
+.category_tag a{
+  color: #FFBF00;
+}

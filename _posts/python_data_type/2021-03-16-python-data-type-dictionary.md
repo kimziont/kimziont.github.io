@@ -243,7 +243,8 @@ dic['a']
 dic
 -------------
 {'a': 0}
-```
+```  
+
 
 ```python
 dic = defaultdict(list)
@@ -266,4 +267,5 @@ dic
 -------------------
 {'a': [], 'b': ['banana'], 'c': 0}
 
-# 이렇게 dic의 default가 list였음에도 int형 0을 default로 할 수 있습니다.
+# 이렇게 dic의 default가 list였음에도 int형 0을 default로 할 수 있습니다.  
+```
