@@ -6,6 +6,7 @@
    Default
    ========================================================================== */
 
+
 .sidebar {
   @include clearfix();
   // @include breakpoint(max-width $large) {
@@ -56,8 +57,8 @@
 
   p,
   li {
-    font-family: $sans-serif;
-    font-size: $type-size-6;
+    font-family: "Coming Soon",Georgia,Times,serif;
+    font-size: 18px;
     line-height: 1.5;
   }
 
@@ -127,8 +128,8 @@
   }
 
   img {
-    max-width: 110px;
-    border-radius: 50%;
+    max-width: 200px;
+    border-radius: 20%;
 
     @include breakpoint($large) {
       padding: 5px;
@@ -343,4 +344,48 @@
     margin-right: initial;
   }
 }
+/*#87CEFA;*/
+.nav__sub-title{
+  color: #b85900;
+  
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+}
 
+ul li {
+  
+  
+}
+
+.sidebar__top {
+  position: fixed;
+  bottom: 1.5em;
+  right: 2em;
+  z-index: 10;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(99, 103, 105) #363a3d;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 17px;
+
+}
+
+*::-webkit-scrollbar-track {
+  background: #363a3d;
+  border-radius: 20px;
+
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #723434;
+  border-radius: 20px;
+  border: 3px solid #723434;
+
+
+}

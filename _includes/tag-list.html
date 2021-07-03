@@ -6,9 +6,9 @@
 {% endcase %}
 
 {% if site.tag_archive.path %}
-  {% assign tags_sorted = page.tags | sort_natural %}
+  {% assign tags_sorted = post.tags | sort_natural %}
 
-  <p class="page__taxonomy">
+  <p class="post__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
     <span itemprop="keywords">
     {% for tag_word in tags_sorted %}
