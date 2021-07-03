@@ -43,7 +43,7 @@ body {
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+    width: calc(100% - #{$right-sidebar-width}) ;
     padding-right: $right-sidebar-width;
   }
 
@@ -52,7 +52,7 @@ body {
     margin-top: 1em;
     margin-left: 0;
     margin-right: 0;
-    width: 80%;
+    width: 100%;
     clear: both;
 
     .page__content,
