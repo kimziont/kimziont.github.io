@@ -6,7 +6,7 @@ header:
   teaser: /assets/images/deep_learning.jpg
 
 categories:
-  - Keras
+  - Pytorch
 tags:
   - AI
 last_modified_at: 2021-05-02

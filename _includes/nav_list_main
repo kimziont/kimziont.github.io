@@ -91,15 +91,16 @@
 
             </ul>
             <ul>
-               
                 <li><a href="/categories/deep_learning" class="">Deep_learning</a></li>
-
             </ul>
             <ul>
-               
                 <li><a href="/categories/Library" class="">Library</a></li>
-
             </ul>
+            <ul>
+                <li><a href="/categories/Dev_environment" class="">Environment</a></li>
+            </ul>
+
+
         <span class="nav__sub-title">NLP</span>
             <ul>
                  <li><a href="/categories/nlp_paper" class="">paper </a></li>
@@ -115,6 +116,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "django" %}
                         <li><a href="/categories/django" class="">Django</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Git" %}
+                        <li><a href="/categories/Git" class="">Git</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
