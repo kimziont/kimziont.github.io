@@ -8,7 +8,7 @@ header:
 categories:
   - django
 tags:
-  - django
+  - Server
 last_modified_at: 2021-06-04
 ---  
 

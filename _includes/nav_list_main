@@ -108,10 +108,35 @@
             <ul>
                 <li><a href="/categories/nlp_theory" class="">Theory </a></li>
             </ul>
-
-
-
-        <span class="nav__sub-title">Stack</span>
+        <span class="nav__sub-title">Server</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Linux" %}
+                        <li><a href="/categories/Linux" class="">Linux</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "HTTP" %}
+                        <li><a href="/categories/HTTP" class="">HTTP</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Docker" %}
+                        <li><a href="/categories/Docker" class="">Docker</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AWS" %}
+                        <li><a href="/categories/AWS" class="">AWS</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "django" %}
@@ -119,6 +144,9 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+
+
+        <span class="nav__sub-title">Stack</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Git" %}
@@ -141,7 +169,7 @@
 
 
 
-        <span class="nav__sub-title">Hardware</span>
+        <span class="nav__sub-title">Computer</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "computer_structure" %}
