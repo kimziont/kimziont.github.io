@@ -96,8 +96,8 @@ analytics:
 author:
   name             : "JaeYeong Kim"
   avatar           : "/assets/images/her_2.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Busan"
+  bio              : ""
+  location         : "Busan, Korea"
   email            :
   links:
     - label: "Email"
