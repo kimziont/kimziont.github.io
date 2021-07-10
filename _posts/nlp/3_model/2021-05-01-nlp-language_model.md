@@ -24,16 +24,16 @@ last_modified_at: 2021-05-01
 ## 확률 할당의 중요성  
 자연어 처리에서 단어 시퀀스에 확률을 할당하는 일이 왜 필요할까요? 예를 들어보겠습니다. 여기서 대문자 P는 확률을 의미합니다.  
 
-#### 기계 번역(Machine Translation):
+### 기계 번역(Machine Translation):
 P(나는 버스를 탔다) > P(나는 버스를 태운다)  
 : 언어 모델은 두 문장을 비교하여 좌측의 문장의 확률이 더 높다고 판단합니다.  
 
-#### 오타 교정(Spell Correction)
+### 오타 교정(Spell Correction)
 선생님이 교실로 부리나케  
 P(달려갔다) > P(잘려갔다)  
 : 언어 모델은 두 문장을 비교하여 좌측의 문장의 확률이 더 높다고 판단합니다.  
 
-#### 음성 인식(Speech Recognition)
+### 음성 인식(Speech Recognition)
 P(나는 메롱을 먹는다) < P(나는 메론을 먹는다)  
 : 언어 모델은 두 문장을 비교하여 우측의 문장의 확률이 더 높다고 판단합니다.  
 
@@ -55,7 +55,7 @@ n-1개의 단어가 나열된 상태에서 n번째 단어의 확률은 다음과
 
 ![](/assets/images/stat_language_model_3.png){: width="100%" height="70%"}  
 
-#### 확률을 구하는 방법  
+### 확률을 구하는 방법  
 문장의 확률을 구하기 위해서 다음 단어에 대한 예측 확률을 모두 곱한다는 것은 알았습니다. 그렇다면 SLM(Statistical Language Model)은 이전 단어로부터 다음 단어에 대한 확률은 어떻게 구할까요? 정답은 카운트에 기반하여 확률을 계산합니다. 예를 들어, An adorable little boy가 나왔을 때, is가 나올 확률인 P(is|An adorable little boy)를 구해봅시다.  
 
 ![](/assets/images/stat_language_model_4.png){: width="100%" height="70%"}  
@@ -81,6 +81,6 @@ n-gram을 통한 언어 모델에서는 다음에 나올 단어의 예측은 오
 
 만약 갖고있는 코퍼스에서 boy is spreading가 1,000번 등장했다고 합시다. 그리고 boy is spreading insults가 500번 등장했으며, boy is spreading smiles가 200번 등장했다고 합시다. 그렇게 되면 boy is spreading 다음에 insults가 등장할 확률은 50%이며, smiles가 등장할 확률은 20%입니다. 확률적 선택에 따라 우리는 insults가 더 맞다고 판단하게 됩니다.  
 
-#### N-gram 모델의 한계  
+### N-gram 모델의 한계  
 
 n-gram은 뒤의 단어 몇 개만 보다 보니 의도하고 싶은 대로 문장을 끝맺음하지 못하는 경우가 생긴다는 점입니다. 문장을 읽다 보면 앞 부분과 뒷부분의 문맥이 전혀 연결 안 되는 경우도 생길 수 있습니다. 결론만 말하자면, 전체 문장을 고려한 언어 모델보다는 정확도가 떨어질 수밖에 없습니다.   

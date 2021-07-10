@@ -1,5 +1,5 @@
 ---
-title:  "[Pytorch] 텐서 다루기"
+title:  "[Pytorch] 파이토치 설치와 텐서 다루기"
 toc: true
 toc_sticky: true
 header:
@@ -34,10 +34,29 @@ last_modified_at: 2021-07-10
 
 텐서플로가 1년 정도 먼저 딥러닝이 뜨기 시작할 때 발표되어 사용자가 많은 것은 사실입니다. 이에 비해 파이토치는 뒤늦게 사람들에게 알려지고 있는 상태입니다. 텐서플로는 자체적으로 운영하는 포럼이 없고 구글 그룹도 편리하게 정리되어 있지는 않습니다. 반면 파이토치는 자체 운영 포럼이 있어서 질문을 올리면 파이토치 개발자들이 직접 답변을 달아주기도 합니다. 한국 커뮤니티를 보면 텐서플로는 Tensorflow-KR, 파이토치는 PyTorch-KR 페이스북 그룹이 있으며, 많은 사람이 질문을 올리거나 유용한 팁을 공유하고 있습니다.  
 
+## 파이토치 설치  
+[파이토치 홈페이지](https://pytorch.org/get-started/locally/)에 접속 후 원하는 값을 설정하고 밑에 나타나는 명령어를 아나콘다 프롬프트 창에 입력   
+![](/assets/images/pytorch_2.png){: width="100%"}  
+
+저같은 경우에는 CUDA 11.0 버전을 필요로 했기에 파이토치 1.7 버전대를 설치하기 위해 Previous Pytorch Versions에서 제가 원하는 세팅값을 골랐습니다.  
+
+![](/assets/images/pytorch_6.png){: width="100%"}  
+
+![](/assets/images/pytorch_4.png){: width="100%"}  
+
+![](/assets/images/pytorch_3.png){: width="100%"}  
+
+파이토치가 잘 설치되었는지 확인해보겠습니다.  
+
+![](/assets/images/pytorch_5.png){: width="100%"}  
+
+
 
 ## 텐서 연산  
 
 ### 파이토치의 텐서  
+
+![](/assets/images/pytorch_7.png){: width="80%"}  
 
 
 - 파이토치의 기본 단위
@@ -419,4 +438,128 @@ tensor([[1., 1., 1.],
         [1., 1., 1.]])
 tensor([[0., 0., 0.],
         [0., 0., 0.]])
+```  
+
+## GPU를 이용한 텐서 계산  
+
+### Convert to CUDA tensor  
+
+```python
+
+import torch
+import torch.nn as nn
+```   
+
+```python
+x = torch.cuda.FloatTensor(2, 2)
+
+x
+--------------------------------
+tensor([[0., 0.],
+        [0., 0.]], device='cuda:0')
+```
+
+```python
+x = torch.FloatTensor(2, 2)
+
+x
+--------------------------------
+tensor([[-4.4256e-10,  4.5685e-41],
+        [-4.4256e-10,  4.5685e-41]])
+
+
+x.cuda()
+--------------------------------
+tensor([[-4.4256e-10,  4.5685e-41],
+        [-4.4256e-10,  4.5685e-41]], device='cuda:0')
+```  
+
+```python
+d = torch.device('cuda:0')
+
+x.cuda(device=d)
+--------------------------------
+tensor([[-4.4256e-10,  4.5685e-41],
+        [-4.4256e-10,  4.5685e-41]], device='cuda:0')
+
+x.device
+----------------------------------
+device(type='cpu')
+```
+
+```python
+x.to(device=d)
+----------------------------------
+tensor([[0.0000e+00, 0.0000e+00],
+        [7.0065e-45, 0.0000e+00]], device='cuda:0')
+```
+
+### Convert to CPU tensor from CUDA tensor  
+
+```python
+x = torch.cuda.FloatTensor(2, 2)
+
+x = x.cpu()
+
+d = torch.device('cpu')
+x = x.to(d)
+```
+
+### Move model from CPU to GPU
+
+```python
+linear = nn.Linear(2, 2)
+```   
+
+```python
+def print_params(model):
+    for p in model.parameters():
+        print(p)
+```  
+
+```python
+print_params(linear)
+-------------------------------------------
+Parameter containing:
+tensor([[-0.6343,  0.0866],
+        [-0.2044, -0.0207]], requires_grad=True)
+Parameter containing:
+tensor([0.1993, 0.5434], requires_grad=True)
+```  
+
+```python
+linear = linear.cuda()
+
+print_params(linear)
+-----------------------------------------------
+Parameter containing:
+tensor([[ 0.5782,  0.4288],
+        [-0.0220, -0.1614]], device='cuda:0', requires_grad=True)
+Parameter containing:
+tensor([0.6881, 0.0907], device='cuda:0', requires_grad=True)
+```
+
+```python
+linear = linear.cpu()
+
+print_params(linear)
+----------------------------------------------
+Parameter containing:
+tensor([[ 0.5782,  0.4288],
+        [-0.0220, -0.1614]], requires_grad=True)
+Parameter containing:
+tensor([0.6881, 0.0907], requires_grad=True)
+```  
+
+```python
+d = torch.device('cuda:0')
+linear = linear.to(d)
+
+print_params(linear)
+--------------------------------------------------
+Parameter containing:
+tensor([[-0.6343,  0.0866],
+        [-0.2044, -0.0207]], device='cuda:0', requires_grad=True)
+Parameter containing:
+tensor([0.1993, 0.5434], device='cuda:0', requires_grad=True)
 ```
