@@ -130,14 +130,14 @@ Hello world!
 여기 있는 메소드들을 반드시 머릿속에 모두 외우고 있을 필요는 없습니다. ~~그렇게 하기도 힘들구요. 왜냐하면 저희가 문자열 데이터만 사용하는 것도 아니고 여러 형태의 객체가 갖는 메소드를 생각해보면 그 수가 엄청나니까요.~~  
 실제로 코딩을 하실 때는 기억이 안나면 그 때마다 **dir()** 함수를 사용해 어떤게 있는지 살펴보면 됩니다. 그러다 익숙해지면 머릿속에 저장되겠지요.
 
-#### 5-1 .split()
+### 5-1 .split()
 인자(여기서는 쉼표)를 기준으로 나누어 리스트에 저장하여 리턴합니다
 ```python
 >>> a = 'Banana, Apple, Lemon, Grape'
 >>> a.split(", ")
 ['Banana', 'Apple', 'Lemon', 'Grape']
 ```
-#### 5-2 .strip()
+### 5-2 .strip()
 양 쪽 화이트 스페이스를 제거한 값을 리턴해줍니다
 ```python
 >>> a = '         Apple          '
@@ -161,7 +161,7 @@ import string
 'Oh #### is it ok'
 ```  
 
-#### 5-3 .replace()
+### 5-3 .replace()
 인자1로 받은 값을 인자2로 바꾸어줍니다.
 ```python
 >>> a = 'I like Apple'
@@ -171,7 +171,7 @@ import string
 >>> 'I love banana!!!!'.replace('!', '')
 'I love banana'
 ```
-#### 5-4 .join()
+### 5-4 .join()
 인자로 받은 iterable한 데이터(문자열, **리스트**, 튜플, 딕셔너리, 세트)를 내가 지정한 문자열을 이용해  
 하나의 문자열로 이어지도록 합니다.
 ```python
@@ -185,7 +185,7 @@ I like coffee
 >>> "#".join(c)
 'W#h#o# #d#o# #d#o# #y#o#u# #l#o#v#e#?'
 ```
-#### 5-5 .zfill(), .index(), .find(), .count(), .endswith(), .lower()
+### 5-5 .zfill(), .index(), .find(), .count(), .endswith(), .lower()
 * .zfill()  
 인자로 넣어준 값만큼 문자열 길이를 맞춰주고 남는 부분을 숫자 0으로 메꾼다.
 ```python

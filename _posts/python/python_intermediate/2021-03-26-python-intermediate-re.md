@@ -38,7 +38,7 @@ last_modified_at: 2021-03-26
 
 하나씩 살펴보겠습니다.  
 
-#### match  
+### match  
 
 
 ```python
@@ -58,7 +58,7 @@ None
 ```  
 "3 python" 문자열은 처음에 나오는 문자 3이 정규식 [a-z]+에 부합되지 않으므로 None을 돌려준다.  
 
-#### search  
+### search  
 컴파일된 패턴 객체 p를 가지고 이번에는 search 메서드를 수행해 보자.  
 
 ```python
@@ -77,7 +77,7 @@ None
 문자열 전체를 검색하기 때문에 "3 " 이후의 "python" 문자열과 매치된다.  
 이렇듯 match 메서드와 search 메서드는 문자열의 처음부터 검색할지의 여부에 따라 다르게 사용해야 한다.  
 
-#### match 객체의 메서드  
+### match 객체의 메서드  
 
 자, 이제 match 메서드와 search 메서드를 수행한 결과로 돌려준 match 객체에 대해 알아보자.  
 
@@ -116,14 +116,14 @@ None
 >>> m = re.match('[a-z]+', "python")
 ```
 
-#### findall  
+### findall  
 ```python
 >>> result = p.findall("life is too short")
 >>> print(result)
 ['life', 'is', 'too', 'short']
 ```
 
-#### finditer
+### finditer
 ```python
 >>> result = p.finditer("life is too short")
 >>> print(result)
@@ -137,14 +137,14 @@ None
 ```
 finditer는 findall과 동일하지만 그 결과로 반복 가능한 객체(iterator object)를 돌려준다. 반복 가능한 객체가 포함하는 각각의 요소는 match 객체이다.
 
-#### 메타 문자  
+### 메타 문자  
 정규 표현식에서 사용하는 메타 문자(meta characters)에는 다음과 같은 것이 있다.  
 
 ※ 메타 문자란 원래 그 문자가 가진 뜻이 아닌 특별한 용도로 사용하는 문자를 말한다.  
 
 [ ] . * + { }  ? | ^ $ \ ( ) 
 {: .notice--primary}
-#### []
+### []
 [ ] 사이의 문자들과 매치  
 문자 클래스를 만드는 메타 문자인 [ ] 사이에는 어떤 문자도 들어갈 수 있다.  
 즉 정규 표현식이 [abc]라면 이 표현식의 의미는 "a, b, c 중 한 개의 문자와 매치  
@@ -153,7 +153,7 @@ finditer는 findall과 동일하지만 그 결과로 반복 가능한 객체(ite
 * [a-zA-Z] : 알파벳 모두  
 * [0-9] : 숫자  
 
-#### .  
+### .  
 정규 표현식의 Dot(.) 메타 문자는 줄바꿈 문자인 \n을 제외한 모든 문자와 매치됨을 의미한다.  
 
 a.b ==> aab, a0b, a#b, a&b
@@ -164,26 +164,26 @@ a[.]b ==> a.b
 
 
 
-#### *
+### *
 *문자는 바로 앞에 있는 문자가 0번 이상 반복될 수 있다는 의미이다.  
 ca*t  ==> ct, cat, caat, caaaaaat
 
 
-#### +
+### +
 +문자는 바로 앞에 있는 문자가 1번 이상 반복될 수 있다는 의미이다.  
 ca+t  ==> cat, caat, caaaaaat  
 
-#### {}
+### {}
 {m, n}문자는 앞에 있는 문자가 m번 이상 반복 n번 이하 반복할 수 있다는 의미이다.
 ca{2}t ==> caat  
 ca{,3}t ==> ct, cat, caat, caaat  
 ca{2,5}t ==> caat, caaat, caaaat, caaaaat  
 
-#### ?
+### ?
 ? 메타문자가 의미하는 것은 {0, 1} 이다.  
 ab?c ==> ac, abc
 
-#### |
+### |
 | 메타 문자는 or과 동일한 의미로 사용된다. A|B라는 정규식이 있다면 A 또는 B라는 의미가 된다.  
 ```python
 >>> p = re.compile('Crow|Servo')
@@ -192,7 +192,7 @@ ab?c ==> ac, abc
 <re.Match object; span=(0, 4), match='Crow'>
 ```
 
-#### ^  
+### ^  
 ^ 메타 문자는 문자열의 맨 처음과 일치함을 의미한다.  
 ```python
 >>> print(re.search('^Life', 'Life is too short'))
@@ -202,7 +202,7 @@ None
 
 ```
 
-#### $  
+### $  
 $ 메타 문자는 ^ 메타 문자와 반대의 경우이다. 즉 $는 문자열의 끝과 매치함을 의미한다.  
 ```python
 >>> print(re.search('short$', 'Life is too short'))
@@ -212,7 +212,7 @@ None
 ```
 ※ ^ 또는 $ 문자를 메타 문자가 아닌 문자 그 자체로 매치하고 싶은 경우에는 \ ^, \ $ 로 사용하면 된다.
 
-#### \
+### \
 \d ==> 숫자와 매치, [0-9]와 동일한 의미  
 \w ==> 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_]와 동일한 의미  
 \s ==> whitespace 문자와 매치, [ \t\n\r\f\v]와 동일한 표현식이다. 맨 앞의 빈 칸은 공백문자(space)를 의미  
@@ -246,7 +246,7 @@ None
 >>> p = re.compile(r'\\section')
 ```
 
-#### ()  
+### ()  
 ABC 문자열이 계속해서 반복되는지 조사하는 정규식을 작성하고 싶다고 하자.  
 이럴 때 필요한 것이 바로 그루핑(Grouping) 이다.  
 ```python

@@ -36,7 +36,7 @@ html = req.text()
 
 ## urllib 모듈  
 
-#### urllib.request  
+### urllib.request  
 
 urllib.request 모듈을 이용하여 간단하게 웹 페이지 요청 및 데이터를 가져올 수 있습니다.  
 urlopen 함수를 이용하면 웹 페이지를 불러올 수 있습니다. 리턴값으로 호출하여 얻은 데이터에 대한 객체를 반환합니다.  
@@ -49,7 +49,7 @@ req = urllib.request.urlopen("https://www.google.com")
 html = req.read().decode("utf-8")
 ```
 
-#### urllib.parse  
+### urllib.parse  
 urllib.parse 모듈을 이용하면 간단하게 URL과 파라미터를 다룰 수 있습니다.  
 
 URL을 파싱 하기 위해서는 urlparse 함수를 이용하면 됩니다. 아래 코드의 실행 결과와 같이 입력한 URL 정보를 각각의 변수에 할당된 객체가 반환됩니다.  

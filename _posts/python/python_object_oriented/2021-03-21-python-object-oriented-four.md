@@ -14,15 +14,15 @@ last_modified_at: 2021-03-22
 
 ## 1. 추상화  
 
-> 프로그래머들이 특정 코드를 사용할 때 필수적인 정보를 제외한 세부사항을 가리는 것
+> 프로그래머들이 특정 코드를 사용할 때 필수적인 정보를 제외한 세부사항을 가리는 것  
 
-클래스, 메소드, 변수가 추상화의 예시
+클래스, 메소드, 변수가 추상화의 예시  
 
-#### 코드를 작성할 때 협업을 위한 일종의 센스 같은 것
+### 코드를 작성할 때 협업을 위한 일종의 센스 같은 것  
 
-1. 클래스, 메소드, 변수 이름 잘 짓기
-2. Doctstring """~하는 클래스(메소드) ~을 리턴하는 메소드"""
-3. Type hinting
+1. 클래스, 메소드, 변수 이름 잘 짓기  
+2. Doctstring """~하는 클래스(메소드) ~을 리턴하는 메소드"""  
+3. Type hinting  
 
 ```python
 class BankAccount:
@@ -32,8 +32,8 @@ class BankAccount:
 		def deposit(self, amount: float) -> None:
 				"""잔액 인스턴스 변수 balance를 파라미터 amount만큼 늘린다"""
 				self.balance += amount
-```
-
+```  
+  
 help()함수를 실행하면 상황을 잘 보여준다.  
 
 (내가 적은 Doctstring과 Type hinting이 출력된다)  
@@ -41,12 +41,12 @@ help()함수를 실행하면 상황을 잘 보여준다.
 클래스를 넣어도 되고 메소드를 넣어도 되고 리스트를 넣어도 되고 다 된다.  
 
 
-## 2. 캡슐화  
+## 2. 캡슐화
 
 - 외부로부터의 직접적인 접근 차단
 - 객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것
 
-#### __를 통한 캡슐화
+### __를 통한 캡슐화
 
 __변수, __메소드 이런식으로 외부에서 직접적으로 접근할 수 없도록 하고 싶은 변수나 메소드 앞에 언더바를 두개 쓰면 캡슐화가 된다.
 
@@ -63,7 +63,7 @@ class User:
 
 근데 사실 접근 가능하다. __ age **아닌 _ User __ age 로 접근하면 접근된다 (just Name mangling)**
 
-#### getter setter 메소드
+### getter setter 메소드
 
 외부에서 직접적인 접근을 피하고 메소드를 통해 접근(get), 수정(set), 행동(기타 메소드)하도록 한다.
 
@@ -96,7 +96,7 @@ def alchol_age(self):
 		
 ```
 
-#### 데코레이터를 이용한 캡슐화
+### 데코레이터를 이용한 캡슐화
 
 밖에서 사용할 때는 마치 캡슐화 안된 것처럼 사용할 수 있다.
 
@@ -144,7 +144,7 @@ peter.age = 28 # peter.age(28) 아닌가? 해본 결과 안됨
 
 중복(공통)되는 코드(클래스 변수, 인스턴스 변수, 인스턴스 메소드)를 모아 부모 클래스로 만든다.
 
-#### 상속 관계 설정하기
+### 상속 관계 설정하기
 
 ```python
 class Employee:
@@ -154,7 +154,7 @@ class Cashier(Employee):
 		. . .
 ```
 
-#### 상속과 관련된 메소드, 함수
+### 상속과 관련된 메소드, 함수
 
 - mro메소드: help()를 쓰면 메소드, 변수, 상속관계를 모두 확인할 수 있다. mro()메소드는 상속하는 부모 클래스를 보여준다.
 - isinstance 함수: isinstance(확인하고 싶은 인스턴스 이름, 확인하고 싶은 클래스 이름)
@@ -163,7 +163,7 @@ class Cashier(Employee):
 
 - issubclass 함수: issubclass(검사할 클래스, 기준 클래스)
 
-#### 오버라이딩(Overriding)
+### 오버라이딩(Overriding)
 
 > 자식 클래스에서 +알파로 추가하고 싶을 때
 
@@ -270,7 +270,7 @@ class Circle(Shape):
 				return 2*pi*self.radius
 ```
 
-#### 만약 Circle의 area()와 perimeter()가 오버라이딩하지 않으면?
+### 만약 Circle의 area()와 perimeter()가 오버라이딩하지 않으면?
 
 ```python
 class Circle(Shape):
@@ -283,7 +283,7 @@ class Circle(Shape):
 
 → 추상 클래스 사용
 
-#### 추상 클래스
+### 추상 클래스
 
 ```python
 from abc import ABC, abstractmethod
@@ -302,7 +302,7 @@ class Shape(ABC):
 
 그렇게 하면 Shape클래스를 상속받는 자식 클래스들(Circle, Rectangular)은 추상 메소드인 area와 perimeter 메소드를 반드시 오버라이딩 해야한다.
 
-#### 추상 클래스에서 유의할 점
+### 추상 클래스에서 유의할 점
 
 1. 추상 클래스는 인스턴스를 생성할 수 없다.
 2. 추상 클래스도 일반 메소드를 가질 수 있다.
