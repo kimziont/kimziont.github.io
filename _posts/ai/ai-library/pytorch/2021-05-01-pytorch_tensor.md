@@ -567,7 +567,8 @@ Parameter containing:
 tensor([0.1993, 0.5434], device='cuda:0', requires_grad=True)
 ```
 
-## Tip: 앞에서 정의한 텐서나 모델과 같은 장치에 있는 새로운 텐서 또는 모델 만들기
+🔔 앞에서 정의한 텐서나 모델과 같은 장치에 있는 새로운 텐서 또는 모델 만들기  
+
 ```python
 x = torch.cuda.FloatTensor(2, 2)
 
