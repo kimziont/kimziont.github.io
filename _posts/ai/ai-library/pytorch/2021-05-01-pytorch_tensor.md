@@ -215,7 +215,8 @@ x = x.unsqueeze(1)
 
 # size: (2, 2, 1)
 x = x.unsqueeze(-1)
-```
+```  
+![](/assets/images/pytorch_8.png){: width="100%"}  
 
 ```python
 x = torch.FloatTensor([[[1, 2],
