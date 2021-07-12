@@ -82,9 +82,13 @@ for i in range(n_epochs):
     y_hat = model(x)
     loss = F.mse_loss(y_hat, y)
     
+    # 누적된 그래디언트 값 초기화
     optimizer.zero_grad()
+
+    # 그래디언트 계산
     loss.backward()
     
+    # 파라미터 업데이트
     optimizer.step()
 ```
 

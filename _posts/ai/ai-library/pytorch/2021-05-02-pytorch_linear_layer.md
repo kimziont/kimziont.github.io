@@ -12,6 +12,8 @@ tags:
 last_modified_at: 2021-05-02
 ---  
 
+## 선형 모델 직접 구현
+
 ```python
 import torch
 import torch.nn as nn
@@ -51,8 +53,34 @@ y = linear(x)
 list(linear.parameters())
 -------------------------------------------------------------
 [Parameter containing:
- tensor([[ 0.4935, -0.3351, -0.3799],
-         [-0.3448,  0.5737, -0.5283]], requires_grad=True),
+ tensor([[0.0000e+00, 8.0995e-43],
+         [6.7501e-07, 3.4008e-06],
+         [1.0503e-05, 5.4720e+22]], requires_grad=True),
  Parameter containing:
- tensor([0.2594, 0.5389], requires_grad=True)]
+ tensor([3.0601e+32, 1.6533e+19], requires_grad=True)]
+```  
+
+## nn.Linear 이용하기
+
+```python
+linear = nn.Linear(3, 2)
+```  
+
+## 여러 모델로 결합된 모델 만들기 
+
+```python
+class MyLinear(nn.Module):
+
+    def __init__(self, input_dim=3, output_dim=2):
+        self.input_dim = input_dim
+        self.output_dim = output_dim
+        
+        super().__init__()
+        
+        self.linear = nn.Linear(input_dim, output_dim)
+        
+    def forward(self, x):
+        y = self.linear(x)
+
+        return y
 ```
