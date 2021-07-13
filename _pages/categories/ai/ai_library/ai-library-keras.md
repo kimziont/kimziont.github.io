@@ -1,7 +1,7 @@
 ---
 title: "Keras"
 layout: archive
-permalink: /keras
+permalink: /Keras
 author_profile: true
 sidebar_main: true
 ---

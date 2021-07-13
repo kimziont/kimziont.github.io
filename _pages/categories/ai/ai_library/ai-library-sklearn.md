@@ -1,7 +1,7 @@
 ---
 title: "Sckit-learn"
 layout: archive
-permalink: /sklearn
+permalink: /Sklearn
 author_profile: true
 sidebar_main: true
 ---

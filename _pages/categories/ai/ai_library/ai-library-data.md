@@ -1,7 +1,7 @@
 ---
 title: "데이터"
 layout: archive
-permalink: /numpy
+permalink: /Numpy
 author_profile: true
 sidebar_main: true
 ---

@@ -98,14 +98,11 @@ author:
   avatar           : "/assets/images/her_2.jpg"
   bio              : ""
   location         : "Busan, Korea"
-  email            :
+  email            : "ziontkim0510@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "ziontkim0510@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://your-website.com"
+      url: "https://kimziont.github.io/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -115,6 +112,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kimziont"
+    - label: "Kaggle"
+      icon: "fab fa-fw fa-kaggle"
+      url: "https://www.kaggle.com/jaeyeongkim"
 
 
 # Site Footer

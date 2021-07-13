@@ -1,7 +1,7 @@
 ---
 title: "Pytorch"
 layout: archive
-permalink: /pytorch
+permalink: /Pytorch
 author_profile: true
 sidebar_main: true
 ---
