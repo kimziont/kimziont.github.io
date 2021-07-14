@@ -93,4 +93,4 @@ last_modified_at: 2021-04-04
 ![](/assets/images/cnn_11.png){: width="100%"}  
 
 
-#### 실제 코드를 활용하는 방법은 [여기](https://kimziont.github.io/dl_practice/basic_cnn/)를 참고하시면 됩니다.  
+### 실제 코드를 활용하는 방법은 [여기](https://kimziont.github.io/dl_practice/basic_cnn/)를 참고하시면 됩니다.  

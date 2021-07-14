@@ -70,9 +70,9 @@ RNN은 해당 층의 입력 데이터와 이전 층에서의 출력을 함께 �
 
 이를 해결하기 위해 RNN의 advanced 버전인 LSTM과 GRU에 대해서는 다음 포스트에서 살펴보도록 하겠습니다.  
 
-#### 실제 코드를 활용하는 방법은 [여기](https://kimziont.github.io/dl_practice/basic_rnn/)를 참고하시면 됩니다.  
+### 실제 코드를 활용하는 방법은 [여기](https://kimziont.github.io/dl_practice/basic_rnn/)를 참고하시면 됩니다.  
 
-#### 참조
+### 참조
 1. [유튜브 카이스트 딥러닝 홀로서기](https://www.youtube.com/watch?v=tlyzfIYvMWE&list=PLSAJwo7mw8jn8iaXwT4MqLbZnS-LJwnBd&index=26)  
 2. [딥러닝을 이용한 자연어 처리](https://wikidocs.net/22886)
 

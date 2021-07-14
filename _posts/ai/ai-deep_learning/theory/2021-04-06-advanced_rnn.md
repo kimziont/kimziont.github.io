@@ -55,7 +55,7 @@ LSTM에서는 출력, 입력, 삭제 게이트라는 3개의 게이트가 존재
 ![](/assets/images/GRU_1.png){: width="80%"}  
 
 
-#### 참조
+### 참조
 1. [유튜브 카이스트 딥러닝 홀로서기](https://www.youtube.com/watch?v=tlyzfIYvMWE&list=PLSAJwo7mw8jn8iaXwT4MqLbZnS-LJwnBd&index=26)  
 2. [딥러닝을 이용한 자연어 처리](https://wikidocs.net/22886)
 
