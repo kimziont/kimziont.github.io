@@ -54,6 +54,10 @@ last_modified_at: 2021-07-10
 
 ## 4. 텐서 연산  
 
+### 데이터 타입  
+
+![](/assets/images/pytorch_9.png){: width="80%"}  
+
 ### 파이토치의 텐서  
 
 ![](/assets/images/pytorch_7.png){: width="80%"}  
@@ -92,11 +96,16 @@ torch.Size([2, 2])
 ```  
 
 ```python
+# 가장 쉽게 쓸 수 있는 방식, 입력 값과 같은 텐서 새로 만든다 -> 메모리 공유 X
+# 메모리 낭비 커질 수 있다
+torch.tensor([[1, 2], [3, 4]])
+torch.tensor(a, dtype=float64, device=device=torch.device('cpu'))
 # 텐서를 넘파이 배열로
 a = a.numpy()
 
 # 넘파이 배열을 텐서로
 a = torch.from_numpy(a)
+a = torch.as_tensor(a)
 ```  
 
 ```python
@@ -170,6 +179,14 @@ tensor([3., 7.])
 ```
 
 ```python
+# 텐서가 갖는 단일 스칼라 값을 리턴해준다 
+x = torch.tensor([1])
+print(x, x.item())
+-------------------------
+tensor([1]) 1
+```
+
+```python
 x = torch.FloatTensor([[[1, 2],
                         [3, 4]],
                        [[5, 6],
@@ -197,6 +214,15 @@ tensor([[[ 1.,  2.,  3.,  4.]],
         [[ 5.,  6.,  7.,  8.]],
 
         [[ 9., 10., 11., 12.]]])
+
+
+x.view(-1)
+-------------------------------------
+tensor([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12.])
+
+x.view(1, -1)
+-------------------------------------
+tensor([[ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12.]])
 ```
 
 ```python
