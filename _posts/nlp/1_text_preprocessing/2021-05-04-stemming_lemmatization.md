@@ -9,7 +9,7 @@ categories:
   - text_preprocessing
 tags:
   - NLP
-last_modified_at: 2021-05-03
+last_modified_at: 2021-05-04
 ---  
 
 ## 어간 추출과 표제어 추출  

@@ -9,7 +9,7 @@ categories:
   - text_preprocessing
 tags:
   - NLP
-last_modified_at: 2021-05-01
+last_modified_at: 2021-05-02
 ---  
 
 ## 토큰화(Tokenization)  
