@@ -30,3 +30,7 @@ BPE 알고리즘은 같이 붙어서 등장하는 빈도수가 굉장히 높은 
 
 
 ![](/assets/images/subword_segmentation.png){: width="100%"}  
+
+## 3. 인덱스 매핑
+
+보통 여기까지 진행하고 나면 충분한 tokenization이 이루어졌다고 생각하고 단어를 인덱스로 매핑을하게 됩니다.

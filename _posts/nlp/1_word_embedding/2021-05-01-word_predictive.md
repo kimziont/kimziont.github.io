@@ -81,4 +81,9 @@ Skip-Gram은 하나의 단어를 가지고 주변에 올 단어를 예측하는 
 중심 단어에 대해서 주변 단어를 예측하므로 투사층에서 벡터들의 평균을 구하는 과정은 없습니다. 여러 논문에서 성능 비교를 진행했을 때, 전반적으로 Skip-gram이 CBOW보다 성능이 좋다고 알려져 있습니다.  
 ![](/assets/images/word2vec_8.png){: width="80%" height="70%"}  
 
+
+![](/assets/images/skip_gram.png){: width="80%" height="70%"}  
+
+
+
 출처: <https://wikidocs.net/22660>
