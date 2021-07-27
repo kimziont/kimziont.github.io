@@ -111,18 +111,19 @@
         <span class="nav__sub-title">Server</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Linux" %}
-                        <li><a href="/categories/Linux" class="">Linux</a></li>
+                    {% if category[0] == "Network" %}
+                        <li><a href="/categories/Network" class="">Network</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "HTTP" %}
-                        <li><a href="/categories/HTTP" class="">HTTP</a></li>
+                    {% if category[0] == "Linux" %}
+                        <li><a href="/categories/Linux" class="">Linux</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
+
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Docker" %}
