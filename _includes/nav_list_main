@@ -149,6 +149,13 @@
         <span class="nav__sub-title">Stack</span>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Java" %}
+                        <li><a href="/categories/Java" class="">Java</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Git" %}
                         <li><a href="/categories/Git" class="">Git</a></li>
                     {% endif %}
