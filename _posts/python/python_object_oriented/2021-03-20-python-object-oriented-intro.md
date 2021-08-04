@@ -32,9 +32,10 @@ last_modified_at: 2021-03-22
 ```python
 """User 클래스, User클래스를 이용해 인스턴스 생성시 name, email과 같은 변수 자동으로 지정"""
 class User:
-		def __init__(self,name, email):
-				self.name = name
-				self.email = email
+	# 인스턴스 초기화 메소드 -> 인스턴스 생성시 인스턴스의 속성으로 지정된다
+	def __init__(self,name, email):
+		self.name = name
+		self.email = email
 
 
 """인스턴스 user_1 생성"""
@@ -43,13 +44,13 @@ user_1 = User("Peter", "ziont0510@naver.com")
 
 ```python
 class User:
-		def __init__(self,name, email):
-				self.name = name
-				self.email = email
+    def __init__(self,name, email):
+		self.name = name
+		self.email = email
 
 """print문으로 인스턴스 출력시 자동으로 리턴"""
-		def __str__(self):
-				return "사용자:{} \n 이메일:{}".format(self.name, self.email
+	def __str__(self):
+		return "사용자:{} \n 이메일:{}".format(self.name, self.email
 
 
 user_1 = User("김재영", "ziont0510@naver.com")
@@ -63,34 +64,34 @@ print(user_1)
 ```python
 class User:
 """클래스 변수 count 생성, 인스턴스 생성될때마다 count 1씩 증가"""
-		count = 0
-		def __init__(self,name, email):
-				self.name = name
-				self.email = email
-				User.count += 1
+	count = 0
+	def __init__(self,name, email):
+		self.name = name
+		self.email = email
+		User.count += 1
 
 user_1 = User("김재영", "ziont0510@naver.com")
-user_2 = User("코드잇", "orange0510@codeit.com")
+user_2 = User("Jay kim", "orange0510@abc.com")
 ```
 
 메소드가 인스턴스 변수를 전혀 사용하지 않을 경우에는 클래스 메소드로 만들어 준다.
 
 ```python
 class User:
-		count = 0
+	count = 0
 
-		@classmethod
-		def num_instance(cls):
-				return cls.count
+	@classmethod
+	def num_instance(cls):
+		return cls.count
 
-		def __init__(self,name, email):
-				self.name = name
-				self.email = email
-				User.count += 1
+	def __init__(self,name, email):
+		self.name = name
+		self.email = email
+		User.count += 1
 
 user_1 = User("김재영", "ziont0510@naver.com")
 print(user_1.num_instance())
-#메소드 뒤에 괄호 쓰는거 신경좀 쓰자
+
 ```
 
 #### 정적메소드
@@ -112,20 +113,20 @@ def hello():
 
 ```python
 class Download:
-		def add_print_to(original):
-				def wrapper():
-						print("컴퓨터 전원을 켰습니다."
-						original()
-						print("컴퓨터 전원을 끕니다.\n")
-				return wrapper
+	def add_print_to(original):
+		def wrapper():
+			print("컴퓨터 전원을 켰습니다."
+			original()
+			print("컴퓨터 전원을 끕니다.\n")
+		return wrapper
 
-		@add_print_to
-		def python_download():
-				print("파이썬을 다운로드 중입니다.")
-		
-		@add_print_to
-		def league_of_legend_download():
-				print("리그오브레전드를 다운로드 중입니다.")
+	@add_print_to
+	def python_download():
+		print("파이썬을 다운로드 중입니다.")
+	
+	@add_print_to
+	def league_of_legend_download():
+		print("리그오브레전드를 다운로드 중입니다.")
 
 down_1 = Download()
 down_1.python_download()

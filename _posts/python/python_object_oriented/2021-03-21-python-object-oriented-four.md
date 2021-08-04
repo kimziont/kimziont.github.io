@@ -61,7 +61,7 @@ class User:
 				.........
 ```
 
-근데 사실 접근 가능하다. __ age **아닌 _ User __ age 로 접근하면 접근된다 (just Name mangling)**
+근데 사실 접근 가능하다. user_1.\__age 아닌 user_1._User__ age 로 접근하면 접근된다 (just Name mangling)**
 
 ### getter setter 메소드
 
@@ -135,6 +135,7 @@ peter = User()
 """별도의 수정 필요없이 그대로 사용가능함을 보여준다."""
 print(peter.age)
 peter.age = 28 # peter.age(28) 아닌가? 해본 결과 안됨
+# age 메소드가 진짜 메소드로 사용한다기 보다는 값을 수정하는 코드를 실행하면 내부적으로 age메소드가 실행이 되는듯
 
 ```
 
@@ -157,11 +158,10 @@ class Cashier(Employee):
 ### 상속과 관련된 메소드, 함수
 
 - mro메소드: help()를 쓰면 메소드, 변수, 상속관계를 모두 확인할 수 있다. mro()메소드는 상속하는 부모 클래스를 보여준다.
-- isinstance 함수: isinstance(확인하고 싶은 인스턴스 이름, 확인하고 싶은 클래스 이름)
-
-    (자식 클래스로 만들어진 인스턴스는 부모 클래스의 인스턴스이기도 하다.)
-
+- isinstance 함수: isinstance(확인하고 싶은 인스턴스 이름, 확인하고 싶은 클래스 이름)  
 - issubclass 함수: issubclass(검사할 클래스, 기준 클래스)
+
+(자식 클래스로 만들어진 인스턴스는 부모 클래스의 인스턴스이기도 하다.) 
 
 ### 오버라이딩(Overriding)
 
@@ -170,7 +170,7 @@ class Cashier(Employee):
 ```python
 class Employee:
 		raise_percentage = 1.03
-		def __init__(self, name, wage)
+		def __init__(self, name, wage):
 				self.name = name
 				self.wage = wage
 
@@ -181,12 +181,117 @@ class Cashier(Employee):
 				self.number_sold = number_sold
 ```
 
+> 상속 받았지만 상속을 사용하지 않은 경우
+
+```python
+class Employee:
+    raise_percentage = 1.03
+
+    def __init__(self, name, wage):
+        self.name = name
+        self.wage = wage
+
+
+class Cashier(Employee):
+    raise_percentage = 1.05
+
+    def __init__(self, nickname, number_sold):
+        self.name = nickname
+        self.number_sold = number_sold
+
+
+cashier_1 = Cashier('Goat', 5)
+
+assert isinstance(cashier_1, Cashier)
+assert isinstance(cashier_1, Employee)
+assert issubclass(Cashier, Employee)
+```
+
+> 상속을 받아서 오버라이딩 하기로 했으면 부모 클래스의 메소드는 완전히 가져와야 한다  
+
+```python
+super().__init__(name, wage)
+에서 name은 가져오고 wage는 안가져오고 이런식으로 하면 안된다
+```
+
+```python
+class Employee:
+    raise_percentage = 1.03
+
+    def __init__(self, name, wage):
+        self.name = name
+        self.wage = wage
+
+
+class Cashier(Employee):
+    raise_percentage = 1.05
+
+    def __init__(self, name, wage, number_sold):
+        super().__init__(name, wage)
+        self.number_sold = number_sold
+
+
+cashier_1 = Cashier('Goat', 10000, 5)
+```
+
+> 부모 클래스가 1개 이상인 경우  
+
+```python
+class Employee:
+    raise_percentage = 1.03
+
+    def __init__(self, name, wage):
+        self.name = name
+        self.wage = wage
+
+
+class Cashier(Employee):
+    raise_percentage = 1.05
+
+    def __init__(self, name, wage, number_sold):
+        super(Cashier, self).__init__(name, wage=wage)
+        self.number_sold = number_sold
+
+
+cashier_1 = Cashier('Goat', 10000, 5)
+
+assert isinstance(cashier_1, Cashier)
+assert isinstance(cashier_1, Employee)
+assert issubclass(Cashier, Employee)
+```
+
+> 부모 클래스와 인자명을 달리주려면 서로 매핑시켜줘야 한다  
+
+```python
+class Employee:
+    raise_percentage = 1.03
+
+    def __init__(self, name, wage):
+        self.name = name
+        self.wage = wage
+
+
+class Cashier(Employee):
+    raise_percentage = 1.05
+
+    def __init__(self, nickname, wage, number_sold):
+        super(Cashier, self).__init__(name=nickname, wage=wage)
+        self.number_sold = number_sold
+
+
+cashier_1 = Cashier('Goat', 10000, 5)
+
+assert isinstance(cashier_1, Cashier)
+assert isinstance(cashier_1, Employee)
+assert issubclass(Cashier, Employee)
+```
+
 
 ## 4. 다형성 
 
 > 클래스에서 변수가 상황에 따라 다른 클래스의 인스턴스를 갖는  경우
 
-이 변수(인스턴스)가 가질 수 있는 변수, 메소드는 인스턴스가 만들어진 클래스에서 공통적으로 정의가 되어 있어야 한다.
+이 변수(인스턴스)가 가질 수 있는 속성, 메소드는 인스턴스가 만들어진 클래스에서 공통적으로 정의가 되어 있어야 한다.
 
 다형성은 말로 설명하는 것 보다 코드를 통해 개념을 파악하는 것이 더 낫다.
 
