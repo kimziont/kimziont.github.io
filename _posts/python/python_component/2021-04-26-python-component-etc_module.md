@@ -147,12 +147,28 @@ defaultdict(<class 'int'>, {'A':5, 'B':4})
 >>> a
 defaultdict(<class 'int'>, {'A':5, 'B':4, 'C':1})
 ```
+
+```python
+# 이미 만들어진 딕셔너리를 defaultdict객체로 만들기
+current = {'초록': 12, '파랑': 3}
+
+dic = defaultdict(int, current)
+
+dic['빨강']
+
+print(dic)
+---------------------------------
+{'초록': 12, '파랑': 3, '빨강': 0}
+```  
+
 #### defaultdict 객체 메소드  
 dict 객체와 같다.  
 
 * keys()  
+
     딕셔너리의 key값들을 보여준다.  
-    값 하나하나를 읽어오기 위해서는 list로 형 변환 시켜줘야 한다.
+    값 하나하나를 읽어오기 위해서는 list로 형 변환 시켜줘야 한다.  
+
     ```python
     >>> dict1.keys()
     dict_keys(['a', 'b', 'c'])
@@ -161,25 +177,31 @@ dict 객체와 같다.
     ```
 
 * values()  
+
     딕셔너리의 value들을 보여준다.
-    마찬가지로 값을 하나씩 읽어오기 위해서는 list로 형 변환 시켜준다. (코드 생략)
+    마찬가지로 값을 하나씩 읽어오기 위해서는 list로 형 변환 시켜준다. (코드 생략)  
 
 * items()  
-    딕셔너리의 (key, value)쌍들을 보여준다.
+
+    딕셔너리의 (key, value)쌍들을 보여준다.  
+
     ```python
     >>> dict1.items()
     dict_items([('a', 'apple'), ('b', 'banana'), ('c', 'car')])
     ```
 
 * pop()  
-    없애고자 하는 (key, value)쌍의 key값을 입력해주면 value값을 리턴하고 해당하는 쌍을 pop해준다 (코드 생략)
+
+    없애고자 하는 (key, value)쌍의 key값을 입력해주면 value값을 리턴하고 해당하는 쌍을 pop해준다 (코드 생략)  
 
 * popitem()  
-    한 번 실행할 때 마다 가장 뒤에 저장된 (key, value)쌍을 리턴하고 딕셔너리에서 pop해준다.  
-    (딕셔너리는 순서가 없는데 어떤 쌍이 가장 뒤에 있는 값인지 어떻게 알까?)
+
+    한 번 실행할 때 마다 가장 뒤에 저장된 (key, value)쌍을 리턴하고 딕셔너리에서 pop해준다.   
+    (딕셔너리는 순서가 없는데 어떤 쌍이 가장 뒤에 있는 값인지 어떻게 알까?)  
 
 * clear()  
-    딕셔너리를 비운다 (코드 생략)
+
+    딕셔너리를 비운다 (코드 생략)  
 
 * copy()  
 
@@ -212,7 +234,8 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
 
 #### itertools 모듈 내에 있는 함수  
 
-* chain()
+* chain()  
+
     순회 가능한 인수(리스트, 문자열 등)들을 차례로 반복합니다.  
 
     ```python
@@ -223,8 +246,10 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
     1, 2, 가, 나, 다, 라, a, b, 
     ```
 
-* cycle()
+* cycle()  
+
     인수를 순환하는 무한 이터레이터를 반환합니다.  
+
     ```python
     import itertools
     for iter in itertools.cycle([1, 2]):
@@ -251,6 +276,7 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
     ```
 
 * accumulate()  
+
     축적된 값을 계산합니다.  
     ```python
     import itertools
@@ -275,7 +301,9 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
 ### heapq 모듈 내에 있는 함수  
 
 * heappush()  
+
     힙에 원소를 추가할 수 있습니다. 첫번째 인자는 원소를 추가할 대상 리스트이며 두번째 인자는 추가할 원소를 넘깁니다.  
+
     ```python
     import heapq
     heap = []
@@ -289,8 +317,10 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
     [1, 3, 7, 4]
     ```  
 
-* heappop()
+* heappop()  
+
     힙에서 원소를 삭제할 수 있습니다.  원소를 삭제할 대상 리스트를 인자로 넘기면, 가장 작은 원소를 삭제 후에 그 값을 리턴합니다.  
+
     ```python
     print(heapq.heappop(heap))
     print(heap)
@@ -299,8 +329,12 @@ itertools는 특수 목적의 이터레이터 함수를 포함하고 있습니�
     [3, 4, 7]
     ```  
 
-* heapify()  
+    heappop이나 heappush를 사용하면 다시 재정렬이 됩니다. 이때 O(log n)이 소요됩니다  
+
+* heapify()   
+
     기존의 리스트를 힙으로 만들어줍니다. 함수에 리스트를 인자로 넘기면 리스트 내부의 원소들의 위에서 다룬 힙 구조에 맞게 재배치되며 최소값이 0번째 인덱스에 위치됩니다.  
+
     ```python
     heap = [4, 1, 7, 3, 8, 5]
     heapq.heapify(heap)
@@ -356,3 +390,6 @@ print(heap_sort([4, 1, 7, 3, 8, 5]))
 ## 참조  
 
 [Engineering Blog by Dale Seo](https://www.daleseo.com/python-heapq/)  
+
+[Eraser's StudyLog](https://sirzzang.github.io/programming/Programming-heapq/)
+

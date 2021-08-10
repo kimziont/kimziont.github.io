@@ -1,7 +1,7 @@
 ---
 title: "데이터 시각화"
 layout: archive
-permalink: /matplotlib
+permalink: /Matplotlib
 author_profile: true
 sidebar_main: true
 ---
