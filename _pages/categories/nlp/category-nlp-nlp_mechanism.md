@@ -7,5 +7,5 @@ sidebar_main: true
 ---
 
 
-{% assign posts = site.categoriesnlp_mechanism %}
+{% assign posts = site.categories.nlp_mechanism %}
 {% for post in posts reversed %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
