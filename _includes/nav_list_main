@@ -120,6 +120,9 @@
             <ul>
                 <li><a href="/categories/nlp_theory" class="">Theory </a></li>
             </ul>
+            <ul>
+                <li><a href="/categories/nlp_practice" class="">Practice </a></li>
+            </ul>
         <span class="nav__sub-title">Server</span>
             <ul>
                 {% for category in site.categories %}
