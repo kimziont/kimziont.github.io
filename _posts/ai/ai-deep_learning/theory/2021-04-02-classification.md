@@ -12,6 +12,8 @@ tags:
 last_modified_at: 2021-04-02
 ---
 
+# 분류(Logistic regression)
+
 ## 1. 로지스틱 회귀(Logistic regression)  
 
 앞에서 연속적인 값을 예측하는 모델에 대해 공부했습니다. 이번 포스트에서는 고양이, 개를 분류하는 이진 분류, 2가지 이상을 분류하는 다중 분류에 대해 공부해 보겠습니다. 

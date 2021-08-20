@@ -13,7 +13,7 @@ last_modified_at: 2021-08-17
 ---
 
 
-## 
+## Python logging
 
 ```python
 import logging

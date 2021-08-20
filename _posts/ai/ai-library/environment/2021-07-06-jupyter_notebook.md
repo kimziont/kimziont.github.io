@@ -12,6 +12,7 @@ tags:
 last_modified_at: 2021-07-06
 ---
 
+# Jupyter notebook의 가상환경과 커널
 
 ## 1. 가상환경과 커널 만들기
 
