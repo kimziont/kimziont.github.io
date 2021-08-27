@@ -7,5 +7,9 @@ sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.Common_part %}
-{% for post in posts reversed %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
+## 1. 파이썬, 딥러닝, 파이토치
+<li><a href="/categories/common_ustage" class="splitter">Ustage</a></li>  
+
+
+## 2. 마스크 착용 이미지 분류 대회
+<li><a href="/categories/common_pstage" class="splitter">Pstage</a></li>  

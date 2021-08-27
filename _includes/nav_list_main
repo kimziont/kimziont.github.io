@@ -10,16 +10,10 @@
       
         <span class="nav__sub-title">Boostcamp</span>
             <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Common_part" %}
-                        <li><a href="/categories/Common_part" class="">Common_part</a></li>
-                    {% endif %}
-                {% endfor %}
-                {% for category in site.categories %}
-                    {% if category[0] == "NLP_part" %}
-                        <li><a href="/categories/NLP_part" class="">NLP_part</a></li>
-                    {% endif %}
-                {% endfor %}
+                <li><a href="/categories/Common_part" class="">Common_part</a></li>
+            </ul>
+            <ul>
+                <li><a href="/categories/NLP_part" class="">NLP_part</a></li>
             </ul>
 
         <span class="nav__sub-title">odds and ends</span>
