@@ -30,11 +30,11 @@ NMT는 입력 문장을 표현하는 Encoder와 Target words를 생성하는 Dec
 
 여기서 $p(y_j|y_{<j},  \textbf{s})$는 다음과 같은 식으로 모델을 나타낼 수 있습니다.  
 
-![](/assets/images/attention_nmt_3.png){: width="40%" height="70%"}  
+![](/assets/images/attention_nmt_3.png){: width="60%" height="70%"}  
 
 여기서 $g$는 output size를 vocabulary-sized vector로 만들어주는 Linear layer이며 $\textbf{h}_j$는 RNN의 hidden unit입니다. 그리고 $\textbf{h}_j$는 다음의 식으로 구해집니다.  
 
-![](/assets/images/attention_nmt_4.png){: width="40%" height="70%"}  
+![](/assets/images/attention_nmt_4.png){: width="60%" height="70%"}  
 여기서 $f$는 LSTM, GRU와 같은 RNN계열의 모델입니다.  
 
 그동안 발표되었던 Kalchbrenner and Blunsom, 2013; Sutskever et al., 2014; Cho et al., 2014; Luong et al., 2015 논문들에서는 입력 문장을 context vector로 나타낸 $\textbf{s}$가 Decoder의 hidden state를 initalize할 때만 한 번 사용되었으나 여기서는 $\textbf{s}$가 입력 문장의 set of hidden states를 나타내며 전체 번역 과정에서 사용됩니다.  
@@ -44,10 +44,10 @@ Attention 기반의 모델이 앞에서 설명한 NMT와 다른 점은 단지 co
 
 Attention-based model은 이전 time_step의 hidden state를 이용해 $\textbf{h}_t$를 구하고 이를 attention mechanism을 이용하여 context vector를 구합니다. 그리고 concatenate과 weight matrix, tanh layer를 지나 $\tilde{\textbf{h}}_t$를 구하고 Linear layer를 통과시킴으로써 해당 time step의 $\hat{\textbf{y}_t}$를 구합니다.  
 
-![](/assets/images/attention_nmt_6.png){: width="40%" height="70%"} 
+![](/assets/images/attention_nmt_6.png){: width="60%" height="70%"} 
   
 
-![](/assets/images/attention_nmt_7.png){: width="40%" height="70%"} 
+![](/assets/images/attention_nmt_7.png){: width="60%" height="70%"} 
 
 ![](/assets/images/attention_nmt_5.png){: width="100%" height="70%"}  
 

@@ -33,6 +33,11 @@
   </style>
 <![endif]-->
 
+<!-- mathjax 추가 -->
+{% if page.use_math %}
+{% include mathjax_support.html %}
+{% endif %}
+
 {% if site.head_scripts %}
   {% for script in site.head_scripts %}
     <script src="{{ script | relative_url }}"></script>
