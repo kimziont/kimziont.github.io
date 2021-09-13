@@ -28,7 +28,7 @@ use_math: true
 NMT는 입력 문장을 표현하는 Encoder와 Target words를 생성하는 Decoder로 이루어져 있으며, 다음과 같은 조건부 확률을 최대로 하도록 한다.  
 ![](/assets/images/attention_nmt_2.png){: width="50%" height="70%"}  
 
-여기서 $p(y_j|y_{<j},  \textbf{s})$는 다음과 같은 식으로 모델을 나타낼 수 있습니다.  
+여기서 $p(y\_j|y\_{<j}, \textbf{s})$는 다음과 같은 식으로 모델을 나타낼 수 있습니다.  
 
 ![](/assets/images/attention_nmt_3.png){: width="60%" height="70%"}  
 
@@ -40,7 +40,7 @@ NMT는 입력 문장을 표현하는 Encoder와 Target words를 생성하는 Dec
 그동안 발표되었던 Kalchbrenner and Blunsom, 2013; Sutskever et al., 2014; Cho et al., 2014; Luong et al., 2015 논문들에서는 입력 문장을 context vector로 나타낸 $\textbf{s}$가 Decoder의 hidden state를 initalize할 때만 한 번 사용되었으나 여기서는 $\textbf{s}$가 입력 문장의 set of hidden states를 나타내며 전체 번역 과정에서 사용됩니다.  
 
 ## 3. Attention-based Models  
-Attention 기반의 모델이 앞에서 설명한 NMT와 다른 점은 단지 context vector $\textbf{c}_t$를 어떻게 유도했고, 언제 사용했는가입니다. 일단 context vector가 구해지고 나면 그 이후의 과정은 앞의 NMT모델과 비슷합니다. 앞의 NMT 모델들은 이전 time_step의 hidden state인 $\textbf{h}_{t-1}$ (Encoder가 앞서 만들어 놓은 context vector 또는 Decoder의 previous hidden_state)와 $\textbf{y}_{t-1}$(또는 $\hat{\textbf{y}}_{t-1}$)를 concatenate한 후 적절한 변환을 통해 $\hat{\textbf{y}_t}$를 구했습니다.  
+Attention 기반의 모델이 앞에서 설명한 NMT와 다른 점은 단지 context vector $\textbf{c}\_t$를 어떻게 유도했고, 언제 사용했는가입니다. 일단 context vector가 구해지고 나면 그 이후의 과정은 앞의 NMT모델과 비슷합니다. 앞의 NMT 모델들은 이전 time_step의 hidden state인 $\textbf{h}\_{t-1}$ (Encoder가 앞서 만들어 놓은 context vector 또는 Decoder의 previous hidden_state)와 $\textbf{y}\_{t-1}$(또는 $\hat{\textbf{y}}\_{t-1}$)를 concatenate한 후 적절한 변환을 통해 $\hat{\textbf{y}\_t}$를 구했습니다.  
 
 Attention-based model은 이전 time_step의 hidden state를 이용해 $\textbf{h}_t$를 구하고 이를 attention mechanism을 이용하여 context vector를 구합니다. 그리고 concatenate과 weight matrix, tanh layer를 지나 $\tilde{\textbf{h}}_t$를 구하고 Linear layer를 통과시킴으로써 해당 time step의 $\hat{\textbf{y}_t}$를 구합니다.  
 
