@@ -28,7 +28,7 @@ use_math: true
 NMT는 입력 문장을 표현하는 Encoder와 Target words를 생성하는 Decoder로 이루어져 있으며, 다음과 같은 조건부 확률을 최대로 하도록 한다.  
 ![](/assets/images/attention_nmt_2.png){: width="50%" height="70%"}  
 
-여기서 $p(y\_j|y\_{<j}, \textbf{s})$는 다음과 같은 식으로 모델을 나타낼 수 있습니다.  
+여기서 $p(y_j\|y_{<j}, \textbf{s})$는 다음과 같은 식으로 모델을 나타낼 수 있습니다.  
 
 ![](/assets/images/attention_nmt_3.png){: width="60%" height="70%"}  
 
