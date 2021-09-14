@@ -55,5 +55,35 @@ Attention-based model은 이전 time_step의 hidden state를 이용해 $\textbf{
 앞서 attention mechanism을 이용하여 context vector를 매 time step마다 생성함으로써 더 나은 성능을 보였다고 설명했다. 지금부터는 attention mechanism을 이용해 context vector를 실제로 어떻게 구하는지 알아보겠다. attention mechanism은 크게 Global과 Local 두 가지 방법이 있다.
 
 ### 1) Global attention
+Global attention의 아이디어는 Encoder에서 생성된 모든 hidden state를 고려하여 매 time step마다 context vector를 만들자는 것이다. 이 논문에서 context vector를 생성하는 과정은 다음과 같다.  
+
+$\textbf{h}_t$ -> $score(\textbf{h}\_t, \bar{\textbf{h}}\_t)$ -> $\textbf{a}_t$ -> $\textbf{c}_t$ -> $\hat{\textbf{h}}\_t$  
+
+$score(\textbf{h}\_t, \bar{\textbf{h}}\_t)$를 계산하는 방법은 크게 세 가지가 있다. 차이는 가중치를 두고 학습을 시킬 것인지 아닌지의 정도이다
+
+![](/assets/images/attention_nmt_8.png){: width="60%" height="70%"}  
+
+score를 구하고 나면 softmax함수를 취하여 weight의 합을 1로 만든다.  
+
+![](/assets/images/attention_nmt_9.png){: width="60%" height="70%"}  
+
+다음과 같이 구해진 $\textbf{a}_t$의 각 성분을 $\bar{\textbf{h}}_s$에 가중합 하게되면 context vector $\textbf{c}_t$가 구해진다.
+
+전체 과정을 그림으로 나타내면 다음과 같다.  
+
+![](/assets/images/attention_nmt_10.png){: width="80%" height="70%"}  
+
+ 
 
 ### 2) Local attention
+Global attention은 각각의 target word를 예측할 때마다 모든 source word를 고려해야한다는 것이다. 
+Local attention 또한 위의 과정과 유사하나 attention을 Encoder의 전체 hidden state가 아닌 특정 시점을 기준으로 windowing하여 특정 부분의 hidden_state만 attention과정에 이용한다는 것이다. 이것은 soft attention과 hard attention간의 trade-off로부터 영감을 받은 것으로, 이러한 접근법은 sotf attention과 비교하여 계산 비용을 줄여주고 hard attention과 비교했을 때는 train과정을 간단하게(hard attention은 non-differentiable) 만든다. 참고로 soft attention은 global attention과 같은 접근법이며, hard attention은 windowing size를 1로 고정하는 것과 같다.  
+Local attention의 window size를 $D$라고 하면, 선택되는 hidden state의 범위는 \[$p_t$-$D$, $p_t$+$D$\]이다. $D$는 empirically하게 결정된다. 그러면 여기서 $p_t$는 어떻게 결정될까? $p_t$를 결정하는 방법에는 두 가지가 있다. 하나는 $local-m$으로 source and target sequences가 monotonically하게 align되었다고 가정하고 $p_t$ = $t$로 두는 것이며, 다른 하나는 $local-p$로 학습을 통해 $p_t$를 결정하는 것으로 다음의 식을 이용한다. 여기서 $S$는 source sentence의 길이이고, $\textbf{v}_p$와 $\textbf{W}_p$는 학습시킬 parameter이다. $S$에 sigmoid의 출력값(0~1)을 곱함으로써 source sentence에서 하나의 위치를 얻을 수 있다.
+
+![](/assets/images/attention_nmt_12.png){: width="60%" height="70%"}  
+
+또는 앞에서 구한 global attention에서 구한 $\textbf{a}_t$에 평균이 $p_t$이고 표준편차가 $D$/2인 가우시안 분포를 곱해줌으로써 $\textbf{a}_t$를 구할 수도 있다.
+
+
+![](/assets/images/attention_nmt_13.png){: width="60%" height="70%"}  
+
