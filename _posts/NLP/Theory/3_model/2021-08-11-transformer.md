@@ -274,3 +274,20 @@ LN = LayerNorm(x + Sublayer(x))
 
 [[DSBA연구실 김동화님의 Transformer & BERT 유튜브 강의]](https://www.youtube.com/watch?v=xhY7m8QVKjo&t=899s)  
 
+
+### 7. Shape by shape  
+
+
+
+![](/assets/images/transformer_hand_1.jpeg){: width="100%"}   
+
+![](/assets/images/transformer_hand_2.jpeg){: width="100%"}   
+
+![](/assets/images/transformer_hand_3.jpeg){: width="100%"}   
+
+#### Masking 보충
+
+![](/assets/images/transformer_hand_4.jpeg){: width="100%"}   
+
+![](/assets/images/transformer_hand_5.jpeg){: width="100%"}   
+
