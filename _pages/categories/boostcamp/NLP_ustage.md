@@ -1,5 +1,5 @@
 ---
-title: "[Boostcamp] Ustage 파이썬, 딥러닝, 파이토치"
+title: "[Boostcamp] Ustage 전처리, 임베딩, 모델"
 layout: archive
 permalink: categories/NLP_ustage
 author_profile: true

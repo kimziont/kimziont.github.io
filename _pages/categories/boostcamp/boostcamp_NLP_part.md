@@ -1,5 +1,5 @@
 ---
-title: "NLP Ustage 전처리, 임베딩, 모델"
+title: "NLP"
 layout: archive
 permalink: categories/NLP_part
 author_profile: true
