@@ -135,4 +135,65 @@ Good bye
 
 ### 1) 중첩 함수를 이용한 데코레이터
 
+```python
+def is_multiple(x):
+    def real_decorator(func):
+        def wrapper(a, b):
+            r = func(a, b)
+            if r % x == 0:
+                print(f'{func.__name__}의 반환값은 {x}의 배수입니다.')
+            else:
+                print(f'{func.__name__}의 반환값은 {x}의 배수가 아닙니다.')
+            return r
+        return wrapper
+    return real_decorator
+
+
+@is_multiple(3)
+def add(a, b):
+    return a + b
+ 
+print(add(10, 20))
+print(add(2, 5))
+---------------------------------------
+add의 반환값은 3의 배수입니다.
+30
+add의 반환값은 3의 배수가 아닙니다.
+7
+```
+
 ### 2) 클래스를 이용한 데코레이터
+클래스를 이용한 데코레이터에서 파이썬 구문이 어떻게 처리되는지 살펴보겠습니다. 먼저 예시 코드를 보고 설명을 드리도록 하겠습니다.  
+
+```python
+class IsMultiple:
+    def __init__(self, x):
+        self.x = x
+
+    def __call__(self, func):
+        def wrapper(a, b):
+            r = func(a, b)
+            if r % self.x == 0:
+                print(f'{func.__name__}의 반환값은 {self.x}의 배수입니다.')
+            else:
+                print(f'{func.__name__}의 반환값은 {self.x}의 배수가 아닙니다.')
+            return r
+
+        return wrapper
+
+
+@IsMultiple(3)
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))
+print(add(2, 5))
+-----------------------------------
+add의 반환값은 3의 배수입니다.
+30
+add의 반환값은 3의 배수가 아닙니다.
+7
+```
+
+`@IsMultiple(3)`에서 @ 연산 전에 전달된 파라미터를 사용해 데코레이터 객체가 생성됩니다. 그 다음 @ 연산이 호출됩니다. 데코레이터 객체는 add함수를 래핑하여 \__call__ 매직 메서드를 호출합니다.
