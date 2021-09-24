@@ -70,7 +70,7 @@ AI를 공부하다보면 `실제 현업에서는 어떤 프로세스를 거쳐 �
 ![](/assets/images/special_lec_8.png){: width="100%" height="70%"}  
 
 ### 3) 모델 서빙
-![](/assets/images/special_lec_9.png){: width="100%" height="70%"}  
+![](/assets/images/special_lec_9.png){: width="70%" height="70%"}  
 
 
 이렇게 인공지능 모델을 개발해 서비스화하기 까지에는 세세한 과정이 있기에 여러 분야들을 조금씩 배우며 자신이 좋아하거나 잘하는 분야에 조금 더 집중하면 좋을 것 같습니다.  
