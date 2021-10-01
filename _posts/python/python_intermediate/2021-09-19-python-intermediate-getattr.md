@@ -11,7 +11,7 @@ tags:
   - Python
 last_modified_at: 2021-09-19
 ---
-# 객체의 속성 얻기 (__dict__, __getattribute__, __getattr__,  getattr)
+# 객체의 속성 얻기 (\__dict__, \__getattribute__, \__getattr__,  getattr)
 
 이번 포스트에서는 파이썬에서 객체의 속성을 얻는 과정을 조금 자세히 살펴보겠습니다.  
 
