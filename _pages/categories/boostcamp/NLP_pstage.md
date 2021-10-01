@@ -1,5 +1,5 @@
 ---
-title: "[Boostcamp] Pstage 업로드 예정"
+title: "[Boostcamp] Pstage KLUE-RE"
 layout: archive
 permalink: categories/NLP_pstage
 author_profile: true
