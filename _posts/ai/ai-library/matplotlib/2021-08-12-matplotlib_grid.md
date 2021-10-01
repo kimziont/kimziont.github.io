@@ -1,5 +1,5 @@
 ---
-title:  "[Data_visualization] Matplotlib 해부하기 chap 5: Grid"
+title:  "[Data_visualization] Matplotlib 해부하기 chap 6: Grid"
 toc: true
 toc_sticky: true
 header:

@@ -1,5 +1,5 @@
 ---
-title:  "[Data_visualization] Matplotlib 해부하기 chap 7: Color"
+title:  "[Data_visualization] Matplotlib 해부하기 chap 8: Color"
 toc: true
 toc_sticky: true
 header:

@@ -1,5 +1,5 @@
 ---
-title:  "[Data_visualization] Matplotlib 해부하기 chap 8: rcParams"
+title:  "[Data_visualization] Matplotlib 해부하기 chap 9: rcParams"
 toc: true
 toc_sticky: true
 header:

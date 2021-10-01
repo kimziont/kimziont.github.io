@@ -1,5 +1,5 @@
 ---
-title:  "[Data_visualization] Matplotlib 해부하기 chap 6: Spine"
+title:  "[Data_visualization] Matplotlib 해부하기 chap 7: Spine"
 toc: true
 toc_sticky: true
 header:

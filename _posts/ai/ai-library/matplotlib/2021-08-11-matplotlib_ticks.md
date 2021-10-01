@@ -1,5 +1,5 @@
 ---
-title:  "[Data_visualization] Matplotlib 해부하기 chap 4: Tick and Ticklabels"
+title:  "[Data_visualization] Matplotlib 해부하기 chap 5: Tick and Ticklabels"
 toc: true
 toc_sticky: true
 header:
