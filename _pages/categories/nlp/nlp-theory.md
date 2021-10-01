@@ -11,16 +11,11 @@ sidebar_main: true
 <li><a href="/categories/word_embedding" class="splitter">Word Embedding</a></li>  
 
 
-
-## 2. NLP를 위한 딥러닝
-<li><a href="/categories/nlp_rnn" class="splitter">RNN</a></li>  
-<li><a href="/categories/nlp_cnn" class="splitter">CNN</a></li>  
-
-## 3. NLP를 위한 모델, 매커니즘
+## 2. NLP를 위한 모델, 매커니즘
 <li><a href="/categories/nlp_model" class="splitter">Model</a></li>  
 <li><a href="/categories/nlp_mechanism" class="splitter">Mechanism</a></li>  
 
-## 4. NLP
+## 3. NLP
 
 <li><a href="/categories/text_classification" class="splitter">Text Classification</a></li>  
 <li><a href="/categories/text_similarity" class="splitter">Text Similarity</a></li>  
