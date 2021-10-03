@@ -6,5 +6,9 @@ author_profile: true
 sidebar_main: true
 ---
 
-{% assign posts = site.categories.nlp_practice %}
-{% for post in posts reversed %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
+
+## 1. NLP를 위한 파이토치
+<li><a href="/categories/nlp_pytorch" class="splitter">Pytorch</a></li>  
+
+## 2. NLP를 위한 Huggingface라이브러리
+<li><a href="/categories/nlp_huggingface" class="splitter">Huggingface</a></li>  

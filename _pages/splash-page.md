@@ -19,10 +19,10 @@ feature_row:
     url: /project/tacotron
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/splash/busan2.jpg
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
+  - image_path: /assets/splash/klue.jpg
+    title: "KLUE-RE"
+    excerpt: "Project based on **KLUE**."
+    url: /project/klue_re
     btn_label: "Read More"
     btn_class: "btn--secondar"
   - image_path: /assets/splash/busan2.jpg
