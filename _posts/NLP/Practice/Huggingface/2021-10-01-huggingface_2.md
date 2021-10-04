@@ -12,7 +12,7 @@ tags:
 last_modified_at: 2021-10-01
 ---  
 
-# Hugging face 공부하기 2일차: Transformers, what can they do?
+# Hugging face: Transformers, what can they do?
 Huggingface에 관한 포스트는 [Huggingface 공식 홈페이지](https://huggingface.co/)를 참고하여 작성하였으며 그 중에서도 Huggingface를 사용하는 방법에 관해 친절하게 설명해 놓은 글[(Huggingface course)](https://huggingface.co/course/chapter1)이 있어 이것을 바탕으로 작성하였습니다.  
 
 Huggingface는 자연어 처리(NLP)를 위한 생태계(Ecosystem)로 대표적으로 🤗`Transformers`, 🤗`Datasets`, 🤗`Tokenizers`과 같은 라이브러리를 제공합니다.  

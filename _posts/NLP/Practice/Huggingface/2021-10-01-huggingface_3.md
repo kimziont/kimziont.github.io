@@ -12,10 +12,10 @@ tags:
 last_modified_at: 2021-10-01
 ---  
 
-# Hugging face 공부하기 3일차: How do Transformers work?
+# Hugging face: How do Transformers work?
 Huggingface에 관한 포스트는 [Huggingface 공식 홈페이지](https://huggingface.co/)를 참고하여 작성하였으며 그 중에서도 Huggingface를 사용하는 방법에 관해 친절하게 설명해 놓은 글[(Huggingface course)](https://huggingface.co/course/chapter1)이 있어 이것을 바탕으로 작성하였습니다.  
 
-이번 포스트에서는 현재 NLP 관련 task에서 모델의 핵심 구조인 `Transformer`에 대해 배워보겠습니다. 
+이번 포스트에서는 현재 NLP 관련 task에서 모델의 핵심 구조인 `Transformer`에 대해 배워보겠습니다.🤗 
 
 ## 1. A bit of Transformer history  
 
