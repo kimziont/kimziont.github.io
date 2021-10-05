@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 3일차: How do Transformers work"
+title:  "[NLP] Hugging face Chap1. How do Transformers work"
 toc: true
 toc_sticky: true
 header:
@@ -9,7 +9,7 @@ categories:
   - nlp_huggingface
 tags:
   - NLP
-last_modified_at: 2021-10-01
+last_modified_at: 2021-10-02
 ---  
 
 # Hugging face: How do Transformers work?

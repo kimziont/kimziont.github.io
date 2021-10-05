@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 2일차: Transformers, what can they do?"
+title:  "[NLP] Hugging face Chap1. Transformers, what can they do?"
 toc: true
 toc_sticky: true
 header:

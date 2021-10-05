@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 1일차: Introduction"
+title:  "[NLP] Hugging face Chap1. Introduction"
 toc: true
 toc_sticky: true
 header:

@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 8일차: Putting it all together(powerful tokenizer API)"
+title:  "[NLP] Hugging face Chap2. Putting it all together(powerful tokenizer API)"
 toc: true
 toc_sticky: true
 header:

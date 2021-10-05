@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 5일차: Models"
+title:  "[NLP] Hugging face Chap2. Models"
 toc: true
 toc_sticky: true
 header:
@@ -9,7 +9,7 @@ categories:
   - nlp_huggingface
 tags:
   - NLP
-last_modified_at: 2021-10-04
+last_modified_at: 2021-10-02
 ---  
 
 # Hugging face: Models

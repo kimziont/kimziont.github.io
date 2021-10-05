@@ -1,5 +1,5 @@
 ---
-title:  "[NLP] Hugging face 공부하기 7일차: Handling multiple sequences"
+title:  "[NLP] Hugging face Chap2. Handling multiple sequences"
 toc: true
 toc_sticky: true
 header:
