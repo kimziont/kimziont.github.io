@@ -6,7 +6,7 @@ header:
   teaser: /assets/images/NLP.jpg
 
 categories:
-  - nlp_practice
+  - nlp_pytorch
 tags:
   - NLP
 last_modified_at: 2021-08-14

@@ -10,5 +10,5 @@ sidebar_main: true
 <li><a href="/categories/NLP_ustage" class="splitter">Ustage</a></li>  
 
 
-## 2. 업로드 예정
+## 2. KLUE-RE: 문장 내 단어의 관계 추출 대회
 <li><a href="/categories/NLP_pstage" class="splitter">Pstage</a></li>  
